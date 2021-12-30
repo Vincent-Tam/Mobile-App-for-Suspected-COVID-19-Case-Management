@@ -4,6 +4,12 @@
         "password": "Password",
         "login": "Login"
     },
+    "SignUp": {
+        "email": "Email Address",
+        "password": "Password",
+        "confirmPassword": "Confirm Password",
+        "submit": "Submit"
+    },
     "surveyHK": {
         "reminder": "*This questionnaire is specified for HK",
         "survey": "Questionnaire",

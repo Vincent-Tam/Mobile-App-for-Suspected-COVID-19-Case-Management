@@ -4,6 +4,12 @@
         "password": "密碼",
         "login": "登入"
     },
+    "SignUp": {
+        "email": "電郵地址",
+        "password": "密碼",
+        "confirmPassword": "確認密碼",
+        "submit": "提交"
+    },
     "Survey": {
         "survey": "問卷",
         "Q1": "1. "

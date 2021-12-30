@@ -1,5 +1,7 @@
 import React, {useState, useEffect} from 'react'
-import { StyleSheet, Text, View, KeyboardAvoidingView, Button, TextInput, TouchableOpacity, ToastAndroid } from 'react-native'
+import { StyleSheet, Text, View, KeyboardAvoidingView, TouchableOpacity, ToastAndroid } from 'react-native'
+import { TextInput, Button, Caption } from 'react-native-paper'
+import { useTranslation, Trans } from "react-i18next";
 import { auth } from '../firebase'
 import { db } from '../firebase';
 
@@ -7,6 +9,7 @@ const SignUpScreen = ({ navigation }) => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [confirmPassword, setConfirmPassword] = useState('') 
+    const { t } = useTranslation();
 
     const handleSignUp = () => {
         auth.createUserWithEmailAndPassword(email, password)
@@ -53,7 +56,7 @@ const SignUpScreen = ({ navigation }) => {
     return (
         //form
         <KeyboardAvoidingView style={styles.container} behavior='height'>
-            <View style={styles.inputContainer}>
+            {/*<View style={styles.inputContainer}>
                 <TextInput 
                 placeholder='Email Address'
                 type='email'
@@ -76,14 +79,18 @@ const SignUpScreen = ({ navigation }) => {
                 style={styles.input}
                 secureTextEntry
                 />
-                <Text style={{marginTop:10}}> Password must at least 6 digits </Text>
-            </View>
+    <Text style={{marginTop:10}}> Password must at least 6 digits </Text>
+            /</View>*/}
+                <TextInput left={<TextInput.Icon name="email" />} style={styles.input} label={t('SignUp.email')} value={email} onChangeText={text => setEmail(text)}/>
+                <TextInput left={<TextInput.Icon name="lock" />} style={styles.input} label={t('SignUp.password')} value={password} onChangeText={text => setPassword(text)} secureTextEntry/>
+                <TextInput left={<TextInput.Icon name="lock" />} style={styles.input} label={t('SignUp.confirmPassword')} value={confirmPassword} onChangeText={text => setConfirmPassword(text)} secureTextEntry/>
+                <Caption style={styles.input}>Password must at least 6 digits </Caption>
             <View style={styles.buttonContainer}>
                 <TouchableOpacity
                 onPress={handleSubmit}
                 style={styles.button}
                 >
-                    <Text style={styles.buttonText}>Submit</Text>
+                    <Text style={styles.buttonText}>{t('SignUp.submit')}</Text>
                 </TouchableOpacity>
             </View>
         </KeyboardAvoidingView>
@@ -95,23 +102,18 @@ export default SignUpScreen
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        alignItems: 'center',
         justifyContent: 'center',
     },
     inputContainer: {
         width: '80%'
     },
     input: {
-        backgroundColor:'white',
-        paddingHorizontal: 15,
-        paddingVertical: 10,
-        borderRadius: 10,
-        marginTop: 15,
+        margin: 10,
     },
     buttonContainer: {
         width: '60%',
         justifyContent: 'center',
-        alignItems: 'center',
+        alignSelf: 'center',
         marginTop: 40,
     },
     button: {

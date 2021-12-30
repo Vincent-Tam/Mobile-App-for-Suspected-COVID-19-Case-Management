@@ -1,5 +1,6 @@
-import React, {useState, useEffect, useReducer} from 'react'
-import { StyleSheet, Text, View, KeyboardAvoidingView, Button, TextInput, TouchableOpacity, ToastAndroid, Image } from 'react-native'
+import React, {useState, useEffect, useReducer, Alert} from 'react'
+import { StyleSheet, Text, View, KeyboardAvoidingView, TouchableOpacity, ToastAndroid, Image } from 'react-native'
+import { TextInput, Button } from 'react-native-paper'
 import { useTranslation, Trans } from "react-i18next";
 import { auth } from '../firebase'
 import { borderColor } from 'react-native/Libraries/Components/View/ReactNativeStyleAttributes';
@@ -31,27 +32,14 @@ const LoginScreen = ({ navigation }) => {
     }
 
     return (
-        <KeyboardAvoidingView style={styles.container} behavior={Platform.OS === "ios" ? "padding" : "height"}>
+        <KeyboardAvoidingView behavior={Platform.OS === "ios" ? "padding" : "height"}>
             {/*Login Title + photo*/}
             <Image style={styles.icon} source={require('../assets/COVID-Icon.jpg')}/>
             <Text style={styles.title}> Hong Kong Suspected COVID-19 Case Management System</Text>
 
             {/*form*/}
-            <View style={styles.inputContainer}>
-                    <TextInput
-                    placeholder={t('Login.email')}
-                    value = {email}
-                    onChangeText = {text => setEmail(text)}
-                    style={styles.input}
-                    />
-                    <TextInput
-                    placeholder={t('Login.password')}
-                    value = {password}
-                    onChangeText = {text => setPassword(text)}
-                    style={styles.input}
-                    secureTextEntry
-                    />
-            </View>
+            <TextInput left={<TextInput.Icon name="email" />} style={styles.inputText} label={t('Login.email')} value={email} onChangeText={text => setEmail(text)}/>
+            <TextInput left={<TextInput.Icon name="lock" />} style={styles.inputText} label={t('Login.password')} value={password} onChangeText={text => setPassword(text)} secureTextEntry/>
             <View style={styles.buttonContainer}>
                 <TouchableOpacity
                 onPress={handleLogin}
@@ -76,6 +64,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: 'white',
+        margin: 10,
     },
     icon: {
         height: 150,
@@ -83,7 +72,8 @@ const styles = StyleSheet.create({
         resizeMode: 'contain',
         justifyContent: 'center',
         alignItems: 'center',
-        marginTop: 0,
+        alignSelf:'center',
+        marginTop: 10,
         marginBottom: 0,
         borderColor: "red",
         borderWidth: 5,
@@ -94,12 +84,16 @@ const styles = StyleSheet.create({
         fontWeight:'bold',
         textAlign: 'center',
         justifyContent: 'center',
+        alignSelf:'center',
         marginTop: 0,
         margin: 15, 
         padding: 10,
     },
     inputContainer: {
         width: '60%',
+    },
+    inputText: {
+        margin: 10,
     },
     input: {
         backgroundColor:'white',
@@ -117,7 +111,7 @@ const styles = StyleSheet.create({
     buttonContainer: {
         width: '60%',
         justifyContent: 'center',
-        alignItems: 'center',
+        alignSelf: 'center',
         marginTop: 40,
     },
     button: {
@@ -125,12 +119,12 @@ const styles = StyleSheet.create({
         width: '90%',
         padding: 15,
         borderRadius: 10,
-        alignItems: 'center',
     },
     buttonText: {
         color: 'white',
         fontWeight: '700',
         fontSize: 18,
+        alignSelf: 'center',
     },
     signUpText: {
         marginTop: 15,

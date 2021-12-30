@@ -4,19 +4,19 @@ import { NavigationContext, useNavigation } from '@react-navigation/native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { auth } from '../firebase'
 
-
-const handleSignOut = (navigation) => {
-    auth.signOut()
-    .then(() => {
-        // navigation.push('SignIn');
-        // this.props.navigation.goBack(null)
-        alert('Sign Out!');
-    })
-    .catch(error => alert(error.message))
-
-}
-
 const AccountScreen = ({navigation}) => {
+    // const navigation = useNavigation();
+    const handleSignOut = () => {
+        auth.signOut()
+        .then(() => {
+            // navigation.push('SignIn');
+            // this.props.navigation.goBack(null)
+            alert('Sign Out!');
+        })
+        .catch(error => alert(error.message))
+    
+    }
+
     return (
         <View style={styles.container}>
             <Text>Account: {auth.currentUser?.email}</Text>
