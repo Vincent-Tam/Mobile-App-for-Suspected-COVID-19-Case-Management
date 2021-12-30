@@ -1,0 +1,11 @@
+{
+    "Login": {
+        "email": "電郵地址",
+        "password": "密碼",
+        "login": "登入"
+    },
+    "Survey": {
+        "survey": "問卷",
+        "Q1": "1. "
+    }
+}

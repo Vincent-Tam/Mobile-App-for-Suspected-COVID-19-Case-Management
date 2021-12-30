@@ -1,0 +1,40 @@
+{
+    "Login": {
+        "email": "Email Address",
+        "password": "Password",
+        "login": "Login"
+    },
+    "surveyHK": {
+        "reminder": "*This questionnaire is specified for HK",
+        "survey": "Questionnaire",
+        "name": "Name",
+        "phone": "Phone Number",
+        "address": "Address",
+        "overseaAddress": "Oversea Address",
+        "job": "Job",
+        "gender": "Gender",
+        "age": "Age",
+        "datePicker": "Date Picker",
+        "q1": "1. Have been fully vaccinated against COVID-19?",
+        "q2": "2. Have been abroad within one year?",
+        "q3": "3. Are suspected fever symptoms in the past two weeks?",
+        "q4": "4. Are dyspnea or cough symptoms in the past two weeks?",
+        "q5": "5. Are there changes in taste or loss of taste?",
+        "q6": "6. Whether the surrounding population in the family is COVID-19 infected?",
+        "q7": "7. Whether the surrounding population in the working place is COVID-19 infected?",
+        "q8": "8. Have been in close contact with someone who has COVID-19?",
+        "q9": "9. Have been tested(RT-PCR) for the coronavirus in the last 10 days?",
+        "submit": "Submit",
+        "yes": "Yes",
+        "no": "No",
+        "q8_Option1": "had direct physical contact",
+        "q8_Option2": "shared eating or drinking utensils",
+        "q8_Option3": "been sneezed on or coughed on by confirmed patients",
+        "q9_Option1": "Yes, result was positive",
+        "q9_Option2": "Yes, result was negative",
+        "q9_Option3": "Yes, still waiting for the result",
+        "q9_Option4": "No, have not been tested",
+        "submitSuccess": "Submit successful!",
+        "submitFail": "Submit failed!"
+    }
+}
