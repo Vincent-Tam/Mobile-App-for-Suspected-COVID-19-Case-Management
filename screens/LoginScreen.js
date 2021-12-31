@@ -49,8 +49,8 @@ const LoginScreen = ({ navigation }) => {
                 </TouchableOpacity>
             </View>
             <View style={styles.signUpText}>
-                <Text>Don't have an account already? </Text>
-                <Text style={styles.textLink} onPress={()=>navigation.navigate('SignUp')}>Sign up</Text>
+                <Text>{t('Login.reminderText')} </Text>
+                <Text style={styles.textLink} onPress={()=>navigation.navigate('SignUp')}>{t('Login.reminderText2')}</Text>
             </View>
         </KeyboardAvoidingView>
     )

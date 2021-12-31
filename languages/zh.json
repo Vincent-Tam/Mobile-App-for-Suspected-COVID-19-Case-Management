@@ -2,16 +2,48 @@
     "Login": {
         "email": "電郵地址",
         "password": "密碼",
-        "login": "登入"
+        "login": "登入",
+        "reminderText": "還沒有賬號?",
+        "reminderText2": "註冊"
     },
     "SignUp": {
         "email": "電郵地址",
         "password": "密碼",
         "confirmPassword": "確認密碼",
-        "submit": "提交"
+        "submit": "提交",
+        "reminderText": "密碼必須至少為6位"
     },
-    "Survey": {
+    "surveyHK": {
+        "reminder": "*此問卷內容為香港專用，其他地區不適用。",
         "survey": "問卷",
-        "Q1": "1. "
+        "name": "姓名",
+        "phone": "電話號碼",
+        "address": "住址",
+        "overseaAddress": "海外住址",
+        "job": "職業",
+        "gender": "性別",
+        "age": "年齡",
+        "datePicker": "選擇日期",
+        "q1": "1. 有沒有完全接種COVID-19疫苗?",
+        "q2": "2. 一年內有離境嗎?",
+        "q3": "3. 過去兩週內是否有疑似發燒症狀?",
+        "q4": "4. 過去兩周是否有呼吸困難或咳嗽症狀嗎?",
+        "q5": "5. 味覺有變化或失去味覺嗎?",
+        "q6": "6. 家中是否有感染了COVID-19的人?",
+        "q7": "7. 工作場所周邊是否有感染了COVID-19的人?",
+        "q8": "8. 是否與患有COVID-19的人有過密切接觸?",
+        "q9": "9. 過去 10 天內是否進行過冠狀病毒檢測 (RT-PCR)?",
+        "submit": "提交",
+        "yes": "是",
+        "no": "否",
+        "q8_Option1": "有過直接的身體接觸",
+        "q8_Option2": "共用過餐具或飲水器",
+        "q8_Option3": "被確診患者打噴嚏或咳嗽",
+        "q9_Option1": "是的，檢測結果呈陽性",
+        "q9_Option2": "是的，檢測結果呈陰性",
+        "q9_Option3": "是的，還在等結果",
+        "q9_Option4": "不，沒有進行檢測",
+        "submitSuccess": "提交成功!",
+        "submitFail": "提交失敗!"
     }
 }

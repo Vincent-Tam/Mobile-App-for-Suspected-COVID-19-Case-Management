@@ -230,18 +230,18 @@ const QuestionnaireHK = () => {
         <Divider />
         <RadioButton.Group onValueChange={value => setQ8(value)} value={q8} >
             <Text style={styles.questionText}>{t('surveyHK.q8')}</Text>
-            <RadioButton.Item label={t('surveyHK.q8_Option1')} value={t('surveyHK.q8_Option1')}/>
-            <RadioButton.Item label={t('surveyHK.q8_Option2')} value={t('surveyHK.q8_Option2')}/>
-            <RadioButton.Item label={t('surveyHK.q8_Option3')} value={t('surveyHK.q8_Option3')}/>
-            <RadioButton.Item label={t('surveyHK.no')} value={t('surveyHK.no')}/>
+            <RadioButton.Item label={t('surveyHK.q8_Option1')} value='had direct physical contact'/>
+            <RadioButton.Item label={t('surveyHK.q8_Option2')} value='shared eating or drinking utensils'/>
+            <RadioButton.Item label={t('surveyHK.q8_Option3')} value='been sneezed on or coughed on by confirmed patients'/>
+            <RadioButton.Item label={t('surveyHK.no')} value='No'/>
         </RadioButton.Group>
         <Divider />
         <RadioButton.Group onValueChange={value => setQ9(value)} value={q9} >
             <Text style={styles.questionText}>{t('surveyHK.q9')}</Text>
-            <RadioButton.Item label={t('surveyHK.q9_Option1')} value={t('surveyHK.q9_Option1')} />
-            <RadioButton.Item label={t('surveyHK.q9_Option2')} value={t('surveyHK.q9_Option2')} />
-            <RadioButton.Item label={t('surveyHK.q9_Option3')} value={t('surveyHK.q9_Option3')} />
-            <RadioButton.Item label={t('surveyHK.q9_Option4')} value={t('surveyHK.q9_Option4')}/>
+            <RadioButton.Item label={t('surveyHK.q9_Option1')} value='Yes, result was positive' />
+            <RadioButton.Item label={t('surveyHK.q9_Option2')} value='Yes, result was negative' />
+            <RadioButton.Item label={t('surveyHK.q9_Option3')} value='Yes, still waiting for the result' />
+            <RadioButton.Item label={t('surveyHK.q9_Option4')} value='No, have not been tested' />
         </RadioButton.Group>
         <Divider />
         <Button style={styles.submit} uppercase={false} mode='contained'onPress={()=>onSubmit()}>Submit</Button>

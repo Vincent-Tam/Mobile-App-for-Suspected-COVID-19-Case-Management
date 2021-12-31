@@ -2,13 +2,16 @@
     "Login": {
         "email": "Email Address",
         "password": "Password",
-        "login": "Login"
+        "login": "Login",
+        "reminderText": "Don't have an account already?",
+        "reminderText2": "Sign up"
     },
     "SignUp": {
         "email": "Email Address",
         "password": "Password",
         "confirmPassword": "Confirm Password",
-        "submit": "Submit"
+        "submit": "Submit",
+        "reminderText": "Password must at least 6 digits"
     },
     "surveyHK": {
         "reminder": "*This questionnaire is specified for HK",

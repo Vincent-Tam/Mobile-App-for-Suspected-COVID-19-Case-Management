@@ -84,7 +84,7 @@ const SignUpScreen = ({ navigation }) => {
                 <TextInput left={<TextInput.Icon name="email" />} style={styles.input} label={t('SignUp.email')} value={email} onChangeText={text => setEmail(text)}/>
                 <TextInput left={<TextInput.Icon name="lock" />} style={styles.input} label={t('SignUp.password')} value={password} onChangeText={text => setPassword(text)} secureTextEntry/>
                 <TextInput left={<TextInput.Icon name="lock" />} style={styles.input} label={t('SignUp.confirmPassword')} value={confirmPassword} onChangeText={text => setConfirmPassword(text)} secureTextEntry/>
-                <Caption style={styles.input}>Password must at least 6 digits </Caption>
+                <Caption style={styles.input}>{t('SignUp.reminderText')}</Caption>
             <View style={styles.buttonContainer}>
                 <TouchableOpacity
                 onPress={handleSubmit}
