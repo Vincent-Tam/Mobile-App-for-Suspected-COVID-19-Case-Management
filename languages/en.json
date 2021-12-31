@@ -11,9 +11,19 @@
         "password": "Password",
         "confirmPassword": "Confirm Password",
         "submit": "Submit",
-        "reminderText": "Password must at least 6 digits"
+        "reminderText": "Password must at least 6 digits",
+        "notMatch": "Your password and confirmation password do not match. Please try again",
+        "notComplete": "All fields must be filled. Please try again",
+        "email-already-in-use": "The email was registered! Please login in",
+        "weak-password": "Password must at least 6 digits! Please try again",
+        "invalid-email": "Your email is not valid! Please try again"
     },
-    "surveyHK": {
+    "Alert": {
+        "loginSuccess": "Login successfully!",
+        "signUpSuccess": "Sign up successfully!",
+        "signOut": "Successfully signed out!"
+    },
+    "SurveyHK": {
         "reminder": "*This questionnaire is specified for HK",
         "survey": "Questionnaire",
         "name": "Name",

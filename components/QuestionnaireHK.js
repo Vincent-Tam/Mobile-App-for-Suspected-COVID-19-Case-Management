@@ -129,7 +129,7 @@ const QuestionnaireHK = () => {
                 q9: q9,
                 state: 'pending',
             }).then(function(){
-                alert(t('surveyHK.submitSuccess'));
+                alert(t('SurveyHK.submitSuccess'));
                 navigation.reset({
                     index: 0,
                     routes: [{ name: 'Home' }],
@@ -144,14 +144,14 @@ const QuestionnaireHK = () => {
 
     return (
         <>
-        <Subheading>{t('surveyHK.reminder')}</Subheading>
-        <TextInput style={styles.textInput} label={t('surveyHK.name')} mode='outlined' value={name} onChangeText={name => setName(name)} />
-        <TextInput style={styles.textInput} label={t('surveyHK.phone')} mode='outlined' value={phone} keyboardType='numeric' onChangeText={phone => setPhone(phone)} />
-        <TextInput style={styles.textInput} label={t('surveyHK.address')} mode='outlined' value={address} onChangeText={address => setAddress(address)} />
-        <TextInput style={styles.textInput} label={t('surveyHK.job')} mode='outlined' value={job} onChangeText={job => setJob(job)} />
+        <Subheading>{t('SurveyHK.reminder')}</Subheading>
+        <TextInput style={styles.textInput} label={t('SurveyHK.name')} mode='outlined' value={name} onChangeText={name => setName(name)} />
+        <TextInput style={styles.textInput} label={t('SurveyHK.phone')} mode='outlined' value={phone} keyboardType='numeric' onChangeText={phone => setPhone(phone)} />
+        <TextInput style={styles.textInput} label={t('SurveyHK.address')} mode='outlined' value={address} onChangeText={address => setAddress(address)} />
+        <TextInput style={styles.textInput} label={t('SurveyHK.job')} mode='outlined' value={job} onChangeText={job => setJob(job)} />
         <DropDown
         style={styles.dropDown}
-        label={t('surveyHK.gender')}
+        label={t('SurveyHK.gender')}
         mode={"outlined"}
         visible={showGenderDropDown}
         showDropDown={() => setGenderShowDropDown(true)}
@@ -162,7 +162,7 @@ const QuestionnaireHK = () => {
         />      
         <DropDown
         style={styles.dropDown}
-        label={t('surveyHK.age')}
+        label={t('SurveyHK.age')}
         mode={"outlined"}
         visible={showAgeDropDown}
         showDropDown={() => setAgeShowDropDown(true)}
@@ -172,7 +172,7 @@ const QuestionnaireHK = () => {
         list={ageList}
         />
         <View style={styles.date}>
-        <Button style={styles.button} icon='calendar' mode='outlined' onPress={showDatepicker} uppercase={false}>{t('surveyHK.datePicker')}</Button>
+        <Button style={styles.button} icon='calendar' mode='outlined' onPress={showDatepicker} uppercase={false}>{t('SurveyHK.datePicker')}</Button>
         {show && (
             <DateTimePicker
             testID="dateTimePicker"
@@ -186,62 +186,62 @@ const QuestionnaireHK = () => {
         <TextInput style={styles.dateDisplay} mode='outlined' disabled>{Moment(date).format('DD-MM-YYYY')}</TextInput>
         </View>
         <RadioButton.Group onValueChange={value => setQ1(value)} value={q1} >
-            <Text style={styles.questionText}>{t('surveyHK.q1')}</Text>
+            <Text style={styles.questionText}>{t('SurveyHK.q1')}</Text>
             <RadioButton.Item label='Yes' value='Yes'/>
             <RadioButton.Item label='No' value='No'/>
         </RadioButton.Group>
         <Divider />
         <RadioButton.Group onValueChange={value => overseaHandler(value)} value={q2} >
-            <Text style={styles.questionText}>{t('surveyHK.q2')}</Text>
+            <Text style={styles.questionText}>{t('SurveyHK.q2')}</Text>
             <RadioButton.Item label='Yes' value='Yes' />
             <RadioButton.Item label='No' value='No' />
         </RadioButton.Group>
-        {showOversea && <TextInput style={styles.textInput} mode='outlined' label={t('surveyHK.overseaAddress')} value={overseaAddress} onChangeText={overseaAddress => setOverseaAddress(overseaAddress)}/>}
+        {showOversea && <TextInput style={styles.textInput} mode='outlined' label={t('SurveyHK.overseaAddress')} value={overseaAddress} onChangeText={overseaAddress => setOverseaAddress(overseaAddress)}/>}
         <Divider />
         <RadioButton.Group onValueChange={value => setQ3(value)} value={q3} >
-            <Text style={styles.questionText}>{t('surveyHK.q3')}</Text>
+            <Text style={styles.questionText}>{t('SurveyHK.q3')}</Text>
             <RadioButton.Item label='Yes' value='Yes'/>
             <RadioButton.Item label='No' value='No'/>
         </RadioButton.Group>
         <Divider />
         <RadioButton.Group onValueChange={value => setQ4(value)} value={q4} >
-            <Text style={styles.questionText}>{t('surveyHK.q4')}</Text>
+            <Text style={styles.questionText}>{t('SurveyHK.q4')}</Text>
             <RadioButton.Item label='Yes' value='Yes'/>
             <RadioButton.Item label='No' value='No'/>
         </RadioButton.Group>
         <Divider />
         <RadioButton.Group onValueChange={value => setQ5(value)} value={q5} >
-            <Text style={styles.questionText}>{t('surveyHK.q5')}</Text>
+            <Text style={styles.questionText}>{t('SurveyHK.q5')}</Text>
             <RadioButton.Item label='Yes' value='Yes'/>
             <RadioButton.Item label='No' value='No'/>
         </RadioButton.Group>
         <Divider />
         <RadioButton.Group onValueChange={value => setQ6(value)} value={q6} >
-            <Text style={styles.questionText}>{t('surveyHK.q6')}</Text>
+            <Text style={styles.questionText}>{t('SurveyHK.q6')}</Text>
             <RadioButton.Item label='Yes' value='Yes'/>
             <RadioButton.Item label='No' value='No'/>
         </RadioButton.Group>
         <Divider />
         <RadioButton.Group onValueChange={value => setQ7(value)} value={q7} >
-            <Text style={styles.questionText}>{t('surveyHK.q7')}</Text>
+            <Text style={styles.questionText}>{t('SurveyHK.q7')}</Text>
             <RadioButton.Item label='Yes' value='Yes'/>
             <RadioButton.Item label='No' value='No'/>
         </RadioButton.Group>
         <Divider />
         <RadioButton.Group onValueChange={value => setQ8(value)} value={q8} >
-            <Text style={styles.questionText}>{t('surveyHK.q8')}</Text>
-            <RadioButton.Item label={t('surveyHK.q8_Option1')} value='had direct physical contact'/>
-            <RadioButton.Item label={t('surveyHK.q8_Option2')} value='shared eating or drinking utensils'/>
-            <RadioButton.Item label={t('surveyHK.q8_Option3')} value='been sneezed on or coughed on by confirmed patients'/>
-            <RadioButton.Item label={t('surveyHK.no')} value='No'/>
+            <Text style={styles.questionText}>{t('SurveyHK.q8')}</Text>
+            <RadioButton.Item label={t('SurveyHK.q8_Option1')} value='had direct physical contact'/>
+            <RadioButton.Item label={t('SurveyHK.q8_Option2')} value='shared eating or drinking utensils'/>
+            <RadioButton.Item label={t('SurveyHK.q8_Option3')} value='been sneezed on or coughed on by confirmed patients'/>
+            <RadioButton.Item label={t('SurveyHK.no')} value='No'/>
         </RadioButton.Group>
         <Divider />
         <RadioButton.Group onValueChange={value => setQ9(value)} value={q9} >
-            <Text style={styles.questionText}>{t('surveyHK.q9')}</Text>
-            <RadioButton.Item label={t('surveyHK.q9_Option1')} value='Yes, result was positive' />
-            <RadioButton.Item label={t('surveyHK.q9_Option2')} value='Yes, result was negative' />
-            <RadioButton.Item label={t('surveyHK.q9_Option3')} value='Yes, still waiting for the result' />
-            <RadioButton.Item label={t('surveyHK.q9_Option4')} value='No, have not been tested' />
+            <Text style={styles.questionText}>{t('SurveyHK.q9')}</Text>
+            <RadioButton.Item label={t('SurveyHK.q9_Option1')} value='Yes, result was positive' />
+            <RadioButton.Item label={t('SurveyHK.q9_Option2')} value='Yes, result was negative' />
+            <RadioButton.Item label={t('SurveyHK.q9_Option3')} value='Yes, still waiting for the result' />
+            <RadioButton.Item label={t('SurveyHK.q9_Option4')} value='No, have not been tested' />
         </RadioButton.Group>
         <Divider />
         <Button style={styles.submit} uppercase={false} mode='contained'onPress={()=>onSubmit()}>Submit</Button>

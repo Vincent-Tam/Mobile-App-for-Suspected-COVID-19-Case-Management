@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from 'react'
-import { StyleSheet, Text, View, KeyboardAvoidingView, TouchableOpacity, ToastAndroid } from 'react-native'
+import { StyleSheet, Text, View, KeyboardAvoidingView, TouchableOpacity } from 'react-native'
 import { TextInput, Button, Caption } from 'react-native-paper'
-import { useTranslation, Trans } from "react-i18next";
+import Toast from 'react-native-simple-toast'
+import { useTranslation } from "react-i18next";
 import { auth } from '../firebase'
 import { db } from '../firebase';
 
@@ -15,27 +16,28 @@ const SignUpScreen = ({ navigation }) => {
         auth.createUserWithEmailAndPassword(email, password)
         .then(userCredentials => {
             const user = userCredentials.user;
-            console.log("Registeredw ith: " + user.email);
+            console.log("Registered with: " + user.email);
             // store user role to firestore
             db.collection('UserRole').doc(user.email).set({
                 role: 'user',
             })
         }).then(()=>{
-            ToastAndroid.show('Sign up successfully!', ToastAndroid.SHORT);
-            navigation.navigate('Welcome');
+            Toast.show(t('Alert.signUpSuccess'), Toast.LONG);
         })
         .catch(e => {
             switch (e.code) {
                 case 'auth/email-already-in-use':
-                    alert('The email was registered! Please login in');
+                    alert(t('SignUp.email-already-in-use'));
                     navigation.navigate('Welcome');
                     break;
                 case 'auth/weak-password':
-                    alert('Password must at least 6 digits! Please try again');
+                    alert(t('SignUp.weak-password'));
                     break;
                 case 'auth/invalid-email':
-                    alert('Must have a valid email! Please try again');
+                    alert(t('SignUp.invalid-email'));
                     break;
+                default:
+                    console.log(e.message);
             }
         })
     }
@@ -43,13 +45,12 @@ const SignUpScreen = ({ navigation }) => {
     const handleSubmit = () => {
         if(email!=''&&password!=''&&confirmPassword!=''){
             if(password == confirmPassword){
-                handleSignUp()
-                console.log('Same')
+                handleSignUp();
             }else{
-                alert('Your password and confirmation password do not match. Please try again')
+                alert(t('SignUp.notMatch'))
             }       
         }else{
-            alert('All fields must be filled. Please try again')
+            alert(t('SignUp.notComplete'))
         }
     }
 

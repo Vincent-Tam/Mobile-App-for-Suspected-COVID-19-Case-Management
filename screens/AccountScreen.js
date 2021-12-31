@@ -1,20 +1,17 @@
 import React from 'react'
 import { StyleSheet, Text, View, TouchableOpacity, Button } from 'react-native'
-import { NavigationContext, useNavigation } from '@react-navigation/native'
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
+import Toast from 'react-native-simple-toast'
+import { useTranslation } from "react-i18next";
 import { auth } from '../firebase'
 
 const AccountScreen = ({navigation}) => {
-    // const navigation = useNavigation();
+    const { t } = useTranslation();
     const handleSignOut = () => {
         auth.signOut()
-        .then(() => {
-            // navigation.push('SignIn');
-            // this.props.navigation.goBack(null)
-            alert('Sign Out!');
+        .then(value => {
+            Toast.show(t('Alert.signOut'), Toast.LONG);
         })
         .catch(error => alert(error.message))
-    
     }
 
     return (

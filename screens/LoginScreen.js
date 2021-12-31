@@ -1,24 +1,14 @@
 import React, {useState, useEffect, useReducer, Alert} from 'react'
-import { StyleSheet, Text, View, KeyboardAvoidingView, TouchableOpacity, ToastAndroid, Image } from 'react-native'
+import { StyleSheet, Text, View, KeyboardAvoidingView, TouchableOpacity, Image } from 'react-native'
 import { TextInput, Button } from 'react-native-paper'
+import Toast from 'react-native-simple-toast'
 import { useTranslation, Trans } from "react-i18next";
 import { auth } from '../firebase'
-import { borderColor } from 'react-native/Libraries/Components/View/ReactNativeStyleAttributes';
+import { useAuth } from '../contexts/AuthContent'
 
 const LoginScreen = ({ navigation }) => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
-
-    useEffect(() => {
-        const unsubscribe = auth.onAuthStateChanged(user => {
-            if(user){
-                console.log(user);
-                navigation.replace("MainStack");
-            }
-        })
-        return unsubscribe
-    }, [])
-
     const { t } = useTranslation();
 
     const handleLogin = () => {
@@ -26,9 +16,10 @@ const LoginScreen = ({ navigation }) => {
         .then(userCredentials => {
             const user = userCredentials.user;
             console.log('Logged in as: '+ user.email);
-            ToastAndroid.show('Login successfully!', ToastAndroid.SHORT);
+            Toast.show(t('Alert.loginSuccess'), Toast.LONG);
         })
         .catch(error => alert('Login failed! Please try again'))
+
     }
 
     return (
