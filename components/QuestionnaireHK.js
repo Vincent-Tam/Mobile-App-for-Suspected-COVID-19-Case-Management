@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, SafeAreaView, ScrollView, StatusBar, Alert } fr
 import { TextInput, Button, RadioButton, Divider, Subheading } from 'react-native-paper'
 import DropDown from "react-native-paper-dropdown"
 import DateTimePicker from '@react-native-community/datetimepicker'
-import { useTranslation, Trans } from "react-i18next"
+import { useTranslation } from "react-i18next"
 import Moment from 'moment'
 import { auth, rtdb } from '../firebase'
 import { useNavigation } from '@react-navigation/native'
@@ -33,6 +33,7 @@ const QuestionnaireHK = () => {
     const [showOversea, setShowOversea] = React.useState(false);
     const { t } = useTranslation();
     const navigation = useNavigation();
+    
     const genderList = [
         {
             label: "Male",
@@ -296,5 +297,6 @@ const styles = StyleSheet.create({
         padding: 5,
         alignSelf: 'center',
         width: '50%',
+        backgroundColor: "#670485",
     }
 })

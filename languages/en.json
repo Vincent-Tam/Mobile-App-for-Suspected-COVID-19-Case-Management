@@ -18,10 +18,28 @@
         "weak-password": "Password must at least 6 digits! Please try again",
         "invalid-email": "Your email is not valid! Please try again"
     },
+    "Account": {
+        "signOut": "Sign Out",
+        "changePwd": "Change Password",
+        "newPwd": "New Password",
+        "confirmPwd": "Confirm Password",
+        "submit": "Submit",
+        "notMatch": "The new password and confirm password do not match. Please try again",
+        "changePwdSuccess": "Update Successful!",
+        "changePwdFail": "Update Fail! Please Try again",
+        "success": "Success",
+        "fail": "Fail"
+    },
     "Alert": {
         "loginSuccess": "Login successfully!",
         "signUpSuccess": "Sign up successfully!",
-        "signOut": "Successfully signed out!"
+        "signOut": "Successfully signed out!",
+        "changePwd": "Password update successfully!",
+        "submit": "Submit",
+        "submitSuccess": "Submit successful!",
+        "submitFail": "Submit failed!",
+        "success": "Success",
+        "fail": "Fail"
     },
     "SurveyHK": {
         "reminder": "*This questionnaire is specified for HK",

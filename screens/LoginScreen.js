@@ -1,10 +1,9 @@
-import React, {useState, useEffect, useReducer, Alert} from 'react'
-import { StyleSheet, Text, View, KeyboardAvoidingView, TouchableOpacity, Image } from 'react-native'
+import React, {useState, useEffect, useReducer} from 'react'
+import { StyleSheet, Text, View, Alert, KeyboardAvoidingView, TouchableOpacity, Image } from 'react-native'
 import { TextInput, Button } from 'react-native-paper'
 import Toast from 'react-native-simple-toast'
-import { useTranslation, Trans } from "react-i18next";
+import { useTranslation } from "react-i18next";
 import { auth } from '../firebase'
-import { useAuth } from '../contexts/AuthContent'
 
 const LoginScreen = ({ navigation }) => {
     const [email, setEmail] = useState('')
@@ -18,7 +17,7 @@ const LoginScreen = ({ navigation }) => {
             console.log('Logged in as: '+ user.email);
             Toast.show(t('Alert.loginSuccess'), Toast.LONG);
         })
-        .catch(error => alert('Login failed! Please try again'))
+        .catch(error => Alert.alert(t('Alert.fail'), 'Login failed! Please try again'))
 
     }
 
