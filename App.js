@@ -5,7 +5,9 @@ import { AuthProvider,useAuth } from './contexts/AuthContent'
 import { NavigationContainer } from '@react-navigation/native'
 import AppStack from './navigation/AppStack'
 import './i18n.config';
+import { LogBox } from 'react-native';
 
+LogBox.ignoreLogs(['Setting a timer']);
 export default function App(){
 	return(
 		<PaperProvider>

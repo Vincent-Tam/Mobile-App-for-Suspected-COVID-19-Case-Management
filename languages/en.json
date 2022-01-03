@@ -18,6 +18,11 @@
         "weak-password": "Password must at least 6 digits! Please try again",
         "invalid-email": "Your email is not valid! Please try again"
     },
+    "Home": {
+        "cardTitle":"Hong Kong COVID-19 Thematic Website",
+        "cardText":"Including all COVID-19 related resources in Hong Kong",
+        "buttonText":"Add New Record"
+    },
     "Account": {
         "signOut": "Sign Out",
         "changePwd": "Change Password",
