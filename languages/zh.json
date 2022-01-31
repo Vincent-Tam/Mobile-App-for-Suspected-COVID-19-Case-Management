@@ -13,7 +13,7 @@
         "submit": "提交",
         "reminderText": "密碼必須至少為6位"
     },
-    "surveyHK": {
+    "SurveyHK": {
         "reminder": "*此問卷內容為香港專用，其他地區不適用。",
         "survey": "問卷",
         "name": "姓名",

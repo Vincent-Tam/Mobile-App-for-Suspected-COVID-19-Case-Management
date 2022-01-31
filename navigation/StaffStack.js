@@ -1,9 +1,7 @@
 import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
-import MainStack from './MainStack'
-import AuthStack from './AuthStack'
-import StaffStack from './StaffStack';
+import BottomTab from './StaffBottomTab'
 
 const Stack = createNativeStackNavigator();
 
@@ -14,19 +12,17 @@ const globalScreenOptions = {
     headerTitleAlign: 'center',
 };
 
-const AppStack = () => {
+const StaffStack = () => {
     return(
 
         <Stack.Navigator screenOptions={globalScreenOptions}>
-            <Stack.Screen options={{headerShown: false}} name="auth" component={AuthStack} />
-            <Stack.Screen options={{headerShown: false}} name="main" component={MainStack} />
-            <Stack.Screen options={{headerShown: false}} name="staff" component={StaffStack} />
+            <Stack.Screen options={{headerShown: false}} name="Tab" component={BottomTab} />
         </Stack.Navigator >
 
     );
 }
  
-export default AppStack
+export default StaffStack
 
 const styles = StyleSheet.create({
     container: {
@@ -34,9 +30,6 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: 'white',
-
-    },
-    button: {
 
     },
 })
