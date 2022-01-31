@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import { StyleSheet, Text, View, KeyboardAvoidingView, TouchableOpacity } from 'react-native'
 import { TextInput, Button, Caption } from 'react-native-paper'
+import DropDown from "react-native-paper-dropdown"
 import Toast from 'react-native-simple-toast'
 import { useTranslation } from "react-i18next";
 import { auth } from '../firebase'
@@ -10,7 +11,24 @@ const SignUpScreen = ({ navigation }) => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [confirmPassword, setConfirmPassword] = useState('') 
+    const [area, setArea] = useState('') 
     const { t } = useTranslation();
+    const [showAreaDropDown, setAreaShowDropDown] = React.useState(false);
+
+    const areaList = [
+        {
+            label: t('Area.hongKong'),
+            value: 'Hong Kong',
+        },
+        {
+            label: t('Area.kowloon'),
+            value: 'Kowloon',
+        },
+        {
+            label: t('Area.newTerritories'),
+            value: 'New Territories',
+        }
+    ]
 
     const handleSignUp = () => {
         auth.createUserWithEmailAndPassword(email, password)
@@ -20,6 +38,7 @@ const SignUpScreen = ({ navigation }) => {
             // store user role to firestore
             db.collection('UserRole').doc(user.email).set({
                 role: 'user',
+                area: area,
             })
         }).then(()=>{
             Toast.show(t('Alert.signUpSuccess'), Toast.LONG);
@@ -57,35 +76,22 @@ const SignUpScreen = ({ navigation }) => {
     return (
         //form
         <KeyboardAvoidingView style={styles.container} behavior='height'>
-            {/*<View style={styles.inputContainer}>
-                <TextInput 
-                placeholder='Email Address'
-                type='email'
-                value = {email}
-                onChangeText = {text => setEmail(text)}
-                style={styles.input}
-
+            <TextInput left={<TextInput.Icon name="email" />} style={styles.input} label={t('SignUp.email')} value={email} onChangeText={text => setEmail(text)}/>
+            <TextInput left={<TextInput.Icon name="lock" />} style={styles.input} label={t('SignUp.password')} value={password} onChangeText={text => setPassword(text)} secureTextEntry/>
+            <TextInput left={<TextInput.Icon name="lock" />} style={styles.input} label={t('SignUp.confirmPassword')} value={confirmPassword} onChangeText={text => setConfirmPassword(text)} secureTextEntry/>
+            <View style={styles.dropDown}>
+                <DropDown
+                style={styles.dropDown}
+                label={t('SignUp.area')}
+                visible={showAreaDropDown}
+                showDropDown={() => setAreaShowDropDown(true)}
+                onDismiss={() => setAreaShowDropDown(false)}
+                value={area}
+                setValue={setArea}
+                list={areaList}
                 />
-                <TextInput 
-                placeholder='Password'
-                value = {password}
-                onChangeText = {text => setPassword(text)}
-                style={styles.input}
-                secureTextEntry
-                />
-                <TextInput 
-                placeholder='Confirm Password'
-                value = {confirmPassword}
-                onChangeText = {text => setConfirmPassword(text)}
-                style={styles.input}
-                secureTextEntry
-                />
-    <Text style={{marginTop:10}}> Password must at least 6 digits </Text>
-            /</View>*/}
-                <TextInput left={<TextInput.Icon name="email" />} style={styles.input} label={t('SignUp.email')} value={email} onChangeText={text => setEmail(text)}/>
-                <TextInput left={<TextInput.Icon name="lock" />} style={styles.input} label={t('SignUp.password')} value={password} onChangeText={text => setPassword(text)} secureTextEntry/>
-                <TextInput left={<TextInput.Icon name="lock" />} style={styles.input} label={t('SignUp.confirmPassword')} value={confirmPassword} onChangeText={text => setConfirmPassword(text)} secureTextEntry/>
-                <Caption style={styles.input}>{t('SignUp.reminderText')}</Caption>
+            </View>
+            <Caption style={styles.input}>{t('SignUp.reminderText')}</Caption>
             <View style={styles.buttonContainer}>
                 <TouchableOpacity
                 onPress={handleSubmit}
@@ -129,4 +135,7 @@ const styles = StyleSheet.create({
         fontWeight: '700',
         fontSize: 18,
     },
+    dropDown: {
+        margin: 10,
+    }
 })

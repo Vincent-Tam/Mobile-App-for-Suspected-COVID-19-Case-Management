@@ -10,6 +10,7 @@
         "email": "電郵地址",
         "password": "密碼",
         "confirmPassword": "確認密碼",
+        "area": "區域",
         "submit": "提交",
         "reminderText": "密碼必須至少為6位"
     },
@@ -45,5 +46,11 @@
         "q9_Option4": "不，沒有進行檢測",
         "submitSuccess": "提交成功!",
         "submitFail": "提交失敗!"
+    },
+    "Area": {
+        "area": "區域",
+        "hongKong": "香港",
+        "kowloon": "九龍",
+        "newTerritories": "新界"
     }
 }

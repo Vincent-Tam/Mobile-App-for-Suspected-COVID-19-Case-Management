@@ -31,6 +31,7 @@ const AccountScreen = () => {
                 <View>
                     <Text>Account: {auth.currentUser?.email}</Text>
                     <Text>Role: {authContext.role}</Text>
+                    <Text>Area: {authContext.area}</Text>
                 </View>
             </View>
             <Portal>

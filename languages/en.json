@@ -10,6 +10,7 @@
         "email": "Email Address",
         "password": "Password",
         "confirmPassword": "Confirm Password",
+        "area": "Area",
         "submit": "Submit",
         "reminderText": "Password must at least 6 digits",
         "notMatch": "Your password and confirmation password do not match. Please try again",
@@ -78,5 +79,11 @@
         "q9_Option4": "No, have not been tested",
         "submitSuccess": "Submit successful!",
         "submitFail": "Submit failed!"
+    },
+    "Area": {
+        "area": "Area",
+        "hongKong": "Hong Kong",
+        "kowloon": "Kowloon",
+        "newTerritories": "New Territories"
     }
 }
