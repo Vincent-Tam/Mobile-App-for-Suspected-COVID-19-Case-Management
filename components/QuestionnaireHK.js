@@ -6,6 +6,7 @@ import DateTimePicker from '@react-native-community/datetimepicker'
 import { useTranslation } from "react-i18next"
 import Moment from 'moment'
 import { auth, rtdb } from '../firebase'
+import { useAuth } from './../contexts/AuthContent';
 import { useNavigation } from '@react-navigation/native'
 
 const QuestionnaireHK = () => {
@@ -31,6 +32,7 @@ const QuestionnaireHK = () => {
     const [date, setDate] = React.useState(new Date());
     const [show, setShow] = React.useState(false);
     const [showOversea, setShowOversea] = React.useState(false);
+    const authContext = useAuth();
     const { t } = useTranslation();
     const navigation = useNavigation();
     
@@ -112,13 +114,15 @@ const QuestionnaireHK = () => {
         if(name!=''&&phone!=''&&address!=''&&job!=''&&age!=''&&gender!=''&&q1!=''&&q2!=''&&q3!=''&&q4!=''&&q5!=''&&q6!=''&&q7!=''&&q8!=''&&q9!='') {
             if(q2 == 'No')
                 setOverseaAddress('');
-            rtdb.ref(`/${auth.currentUser?.uid}/records/${Moment(new Date()).format('YYYY-MM-DD HH:mm:ss')}`).set({
+            let timestamp = Moment(new Date()).format('YYYY-MM-DD HH:mm');
+            rtdb.ref(`/${auth.currentUser?.uid}/records/${timestamp}`).set({
                 name: name,
                 phone: phone,
                 address: address,
                 job: job,
                 age: age,
                 gender: gender,
+                date: date,
                 q1: q1,
                 q2: q2,
                 overseaAddress: overseaAddress,
@@ -128,6 +132,8 @@ const QuestionnaireHK = () => {
                 q7: q7,
                 q8: q8,
                 q9: q9,
+                area: authContext.area,
+                title: timestamp,
                 state: 'pending',
             }).then(function(){
                 alert(t('SurveyHK.submitSuccess'));

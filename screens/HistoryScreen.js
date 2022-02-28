@@ -10,7 +10,7 @@ const HistoryScreen = () => {
     return (
         <SafeAreaView style={styles.container}>
             <ScrollView>
-                {/* <ListHistory /> */}
+                <ListHistory />
             </ScrollView>
         </SafeAreaView>
     )

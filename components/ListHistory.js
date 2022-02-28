@@ -8,15 +8,23 @@ import { useTranslation, Trans } from "react-i18next"
 
 const ListHistory = () => {
     const [expanded, setExpanded] = React.useState(true);
-
+    const handlePress = () => setExpanded(!expanded);
     const { t } = useTranslation();
     const navigation = useNavigation();
 
     function getData() {
+        let arr = [];
         const ref = rtdb.ref(`/${auth.currentUser?.uid}/records`);
         ref.on('value', (snapshot) => {
-            const data = snapshot.val();
-            console.log(data);
+            // const data = snapshot.val();
+            snapshot.forEach(child => {
+                // console.log(child.val().title);
+                // console.log(child.val().name);
+                let record = child.val()
+                record.key = child.val().Title
+                arr.push(record)
+            })
+            console.log(arr)
           });
     }
 
@@ -27,6 +35,21 @@ const ListHistory = () => {
             {getData()}
         </View>
     )
+}
+
+const snapshotToArray= snapshot=>{
+    let returnArr=[]
+
+    snapshot.forEach(childSnapshot => {
+        childSnapshot.forEach(childSnapshot => {
+            let item=childSnapshot.val()
+            item.key=childSnapshot.key
+
+            returnArr.push(item)
+        })
+    });
+    console.log(returnArr);
+    return returnArr;
 }
 
 export default ListHistory

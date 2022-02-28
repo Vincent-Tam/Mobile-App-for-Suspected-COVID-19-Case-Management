@@ -27,34 +27,26 @@ export function AuthProvider({ children }) {
                     setArea(doc.data().area);
                     tempRole = doc.data().role;
                 }
-                // else {
-                //     setRole('undefined');
-                //     setArea('undefined');
-                // }
+                if(user){
+                    console.log('Temp role: '+tempRole);
+                    if(tempRole == 'staff'){
+                        navigation.reset({
+                            index: 0,
+                            routes: [{ name: 'staff' }],
+                        });
+                    }else{
+                        navigation.reset({
+                            index: 0,
+                            routes: [{ name: 'main' }],
+                        });
+                    }
+                }else{
+                    navigation.reset({
+                        index: 0,
+                        routes: [{ name: 'auth' }],
+                    });
+                }
             })
-            if(user){
-                console.log('Temp role: '+tempRole);
-                // if(tempRole == 'staff'){
-                //     navigation.reset({
-                //         index: 0,
-                //         routes: [{ name: 'staff' }],
-                //     });
-                // }else{
-                //     navigation.reset({
-                //         index: 0,
-                //         routes: [{ name: 'main' }],
-                //     });
-                // }
-                console.log('Area: '+area);
-                navigation.reset({
-                    index: 0,
-                    routes: [{ name: 'main' }],
-                });
-            }else
-                navigation.reset({
-                    index: 0,
-                    routes: [{ name: 'auth' }],
-                });
         })
 
         return unsubscribe
