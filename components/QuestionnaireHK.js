@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, Text, View, SafeAreaView, ScrollView, StatusBar, Alert } from 'react-native'
+import { StyleSheet, Text, View, StatusBar, Alert } from 'react-native'
 import { TextInput, Button, RadioButton, Divider, Subheading } from 'react-native-paper'
 import DropDown from "react-native-paper-dropdown"
 import DateTimePicker from '@react-native-community/datetimepicker'
@@ -114,8 +114,9 @@ const QuestionnaireHK = () => {
         if(name!=''&&phone!=''&&address!=''&&job!=''&&age!=''&&gender!=''&&q1!=''&&q2!=''&&q3!=''&&q4!=''&&q5!=''&&q6!=''&&q7!=''&&q8!=''&&q9!='') {
             if(q2 == 'No')
                 setOverseaAddress('');
-            let timestamp = Moment(new Date()).format('YYYY-MM-DD HH:mm');
-            rtdb.ref(`/${auth.currentUser?.uid}/records/${timestamp}`).set({
+            let timestamp = Moment(new Date()).format('YYYY-MM-DD HH:mm:ss');
+            // write a record on the real-time database(under pending category)
+            rtdb.ref(`/${authContext.area}/pending/${timestamp}`).set({
                 name: name,
                 phone: phone,
                 address: address,
@@ -126,6 +127,7 @@ const QuestionnaireHK = () => {
                 q1: q1,
                 q2: q2,
                 overseaAddress: overseaAddress,
+                q3: q3,
                 q4: q4,
                 q5: q5,
                 q6: q6,
@@ -135,8 +137,34 @@ const QuestionnaireHK = () => {
                 area: authContext.area,
                 title: timestamp,
                 state: 'pending',
+                submitter: authContext.uid,
+            });
+            // write a record on the real-time database(under user id category)
+            rtdb.ref(`/records/${auth.currentUser?.uid}/${timestamp}`).set({
+                name: name,
+                phone: phone,
+                address: address,
+                job: job,
+                age: age,
+                gender: gender,
+                date: date,
+                q1: q1,
+                q2: q2,
+                overseaAddress: overseaAddress,
+                q3: q3,
+                q4: q4,
+                q5: q5,
+                q6: q6,
+                q7: q7,
+                q8: q8,
+                q9: q9,
+                area: authContext.area,
+                title: timestamp,
+                state: 'pending',
+                submitter: authContext.uid,
             }).then(function(){
                 alert(t('SurveyHK.submitSuccess'));
+                // return to home screen
                 navigation.reset({
                     index: 0,
                     routes: [{ name: 'Home' }],

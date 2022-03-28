@@ -45,7 +45,11 @@
         "submitSuccess": "Submit successful!",
         "submitFail": "Submit failed!",
         "success": "Success",
-        "fail": "Fail"
+        "fail": "Fail",
+        "confirmSuccess": "Successful! Updated state as confirm",
+        "confirmFail": "Failure! Try again",
+        "rejectSuccess": "Successful! Updated state as reject",
+        "rejectFail": "Failure! Try again"
     },
     "SurveyHK": {
         "reminder": "*This questionnaire is specified for HK",
@@ -85,5 +89,19 @@
         "hongKong": "Hong Kong",
         "kowloon": "Kowloon",
         "newTerritories": "New Territories"
+    },
+    "History": {
+        "heading": "History submit:",
+        "noRecord": "No record yet!"
+    },
+    "PendingList": {
+        "heading": "Pending list:",
+        "noRecord": "No pending record yet!",
+        "more": "more",
+        "confirm": "Confirm",
+        "reject": "Reject"
+    },
+    "UserList": {
+
     }
 }

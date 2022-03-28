@@ -12,7 +12,44 @@
         "confirmPassword": "確認密碼",
         "area": "區域",
         "submit": "提交",
-        "reminderText": "密碼必須至少為6位"
+        "reminderText": "密碼必須至少為6位",
+        "notMatch": "密碼和確認密碼不匹配! 請再試一次",
+        "notComplete": "必須填寫所有欄位! 請再試一次",
+        "email-already-in-use": "郵箱已註冊! 請登錄",
+        "weak-password": "密碼必須至少6位數! 請再試一次",
+        "invalid-email": "您的電子郵件無效! 請再試一次"
+    },
+    "Home": {
+        "cardTitle":"香港冠狀病毒病專題網站e",
+        "cardText":"包括香港所有與 COVID-19 相關的資源",
+        "buttonText":"提交個案"
+    },
+    "Account": {
+        "signOut": "登出",
+        "changePwd": "更改密碼",
+        "newPwd": "新密碼",
+        "confirmPwd": "確認密碼",
+        "submit": "確認",
+        "notMatch": "新密碼和確認密碼不匹配! 請再試一次",
+        "changePwdSuccess": "更改成功！",
+        "changePwdFail": "更改失敗! 請再試一次",
+        "success": "成功",
+        "fail": "失敗"
+    },
+    "Alert": {
+        "loginSuccess": "Login successfully!",
+        "signUpSuccess": "Sign up successfully!",
+        "signOut": "Successfully signed out!",
+        "changePwd": "Password update successfully!",
+        "submit": "Submit",
+        "submitSuccess": "Submit successful!",
+        "submitFail": "Submit failed!",
+        "success": "Success",
+        "fail": "Fail",
+        "confirmSuccess": "Successful! Updated state as confirm",
+        "confirmFail": "Failure! Try again",
+        "rejectSuccess": "Successful! Updated state as reject",
+        "rejectFail": "Failure! Try again"
     },
     "SurveyHK": {
         "reminder": "*此問卷內容為香港專用，其他地區不適用。",
@@ -52,5 +89,16 @@
         "hongKong": "香港",
         "kowloon": "九龍",
         "newTerritories": "新界"
+    },
+    "History": {
+        "heading": "歷史紀錄:",
+        "noRecord": "沒有紀錄!"
+    },
+    "PendingList": {
+        "heading": "待審核清單:",
+        "noRecord": "沒有待審核的紀錄!",
+        "more": "更多",
+        "confirm": "確認",
+        "reject": "拒絕"
     }
 }

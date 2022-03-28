@@ -28,16 +28,20 @@ export function AuthProvider({ children }) {
                     tempRole = doc.data().role;
                 }
                 if(user){
-                    console.log('Temp role: '+tempRole);
-                    if(tempRole == 'staff'){
+                    if(tempRole == 'user'){
+                        navigation.reset({
+                            index: 0,
+                            routes: [{ name: 'main' }],
+                        });
+                    }else if(tempRole == 'staff'){
                         navigation.reset({
                             index: 0,
                             routes: [{ name: 'staff' }],
                         });
-                    }else{
+                    }else {
                         navigation.reset({
                             index: 0,
-                            routes: [{ name: 'main' }],
+                            routes: [{ name: 'admin' }],
                         });
                     }
                 }else{

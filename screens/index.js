@@ -4,4 +4,7 @@ import SignUpScreen from './SignUpScreen'
 import HistoryScreen from './HistoryScreen'
 import AccountScreen from './AccountScreen'
 import SurveyScreen from './SurveyScreen'
-export {HomeScreen, LoginScreen, SignUpScreen, HistoryScreen, AccountScreen, SurveyScreen};
+import PendingScreen from './PendingScreen'
+import UserRoleScreen from './UserRoleScreen'
+import ExportScreen from './ExportScreen' 
+export {HomeScreen, LoginScreen, SignUpScreen, HistoryScreen, AccountScreen, SurveyScreen, PendingScreen, UserRoleScreen, ExportScreen};
