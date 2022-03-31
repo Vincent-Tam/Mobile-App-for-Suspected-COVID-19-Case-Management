@@ -45,7 +45,7 @@ const BottomTab = () => {
         
         >
             <Tab.Screen name="PendingStack" options={{title:'Pending Records'}} component={PendingStack} />
-            <Tab.Screen name="HistoryStack" options={{title:'History'}} component={HistoryStack} />
+            {/* <Tab.Screen name="HistoryStack" options={{title:'History'}} component={HistoryStack} /> */}
             <Tab.Screen name="AccountStack" options={{title:'Account'}} component={AccountStack} />
         </Tab.Navigator>
     );

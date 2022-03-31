@@ -72,6 +72,10 @@ export function AuthProvider({ children }) {
         return currentUser
     }
 
+    function getUid() {
+        return auth.currentUser.uid
+    }
+
     const value = {
         currentUser,
         role,
@@ -79,7 +83,8 @@ export function AuthProvider({ children }) {
         getRole,
         getArea,
         getUser,
-        getCurrentUser
+        getCurrentUser,
+        getUid
     }
 
     return (

@@ -39,6 +39,7 @@ const SignUpScreen = ({ navigation }) => {
             db.collection('UserRole').doc(user.email).set({
                 role: 'user',
                 area: area,
+                email: user.email,
             })
         }).then(()=>{
             Toast.show(t('Alert.signUpSuccess'), Toast.LONG);

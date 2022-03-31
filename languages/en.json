@@ -1,5 +1,6 @@
 {
     "Login": {
+        "name": "Hong Kong Suspected COVID-19 Case Management System",
         "email": "Email Address",
         "password": "Password",
         "login": "Login",
@@ -25,6 +26,9 @@
         "buttonText":"Add New Record"
     },
     "Account": {
+        "account": "Account",
+        "role": "Role",
+        "area": "Area",
         "signOut": "Sign Out",
         "changePwd": "Change Password",
         "newPwd": "New Password",
@@ -49,7 +53,8 @@
         "confirmSuccess": "Successful! Updated state as confirm",
         "confirmFail": "Failure! Try again",
         "rejectSuccess": "Successful! Updated state as reject",
-        "rejectFail": "Failure! Try again"
+        "rejectFail": "Failure! Try again",
+        "answerQuestions": "All question must be answered!"
     },
     "SurveyHK": {
         "reminder": "*This questionnaire is specified for HK",
@@ -92,16 +97,38 @@
     },
     "History": {
         "heading": "History submit:",
-        "noRecord": "No record yet!"
+        "noRecord": "No record yet!",
+        "date": "Submission time",
+        "state": "State"
     },
     "PendingList": {
         "heading": "Pending list:",
         "noRecord": "No pending record yet!",
         "more": "more",
         "confirm": "Confirm",
-        "reject": "Reject"
+        "reject": "Reject",
+        "state": "State",
+        "date": "Submission time"
     },
-    "UserList": {
-
+    "UserRole": {
+        "reminder": "*Acceptable role: user, staff, admin",
+        "email": "Email",
+        "role": "Role",
+        "currentRole": "Current role",
+        "area":"Area",
+        "user": "User",
+        "sameRole": "Same role. No need to change!",
+        "notValidRole": "Warning','Not acceptable role!",
+        "success": "The role change successfully!",
+        "noUser": "No user yet.",
+        "updateButton": "Update role",
+        "modify": "Modify"
+    },
+    "ExportScreen": {
+        "exportButton": "Export Data",
+        "total": "Total confirm cases",
+        "nt": "New Territories",
+        "kowloon": "Kowloon",
+        "hk": "Hong Kong"
     }
 }

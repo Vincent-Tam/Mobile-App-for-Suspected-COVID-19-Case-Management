@@ -29,9 +29,9 @@ const AccountScreen = () => {
             <View style={styles.userInfo}>
                 <Avatar.Icon style={styles.avatar} size={50} icon='account'/>
                 <View>
-                    <Text>Account: {auth.currentUser?.email}</Text>
-                    <Text>Role: {authContext.role}</Text>
-                    <Text>Area: {authContext.area}</Text>
+                    <Text>{t('Account.account')}: {auth.currentUser?.email}</Text>
+                    <Text>{t('Account.role')}: {authContext.role}</Text>
+                    <Text>{t('Account.area')}: {authContext.area}</Text>
                 </View>
             </View>
             <Portal>

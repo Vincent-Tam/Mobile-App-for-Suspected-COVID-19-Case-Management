@@ -4,24 +4,22 @@ import { Button, Divider, Title, Paragraph, Subheading, Card } from 'react-nativ
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
 import { rtdb } from '../firebase'
 import { useAuth } from './../contexts/AuthContent';
-import { useNavigation, useIsFocused } from '@react-navigation/native'
-import { useTranslation, Trans } from "react-i18next"
+import { useNavigation } from '@react-navigation/native'
+import { useTranslation } from "react-i18next"
 
 
 const ListPendingList = () => {
-    const [expanded, setExpanded] = useState(true);
     const [modalOpen, setModalOpen] = useState(false);
     const [modalData, setModalData] = useState([]);
     const [pendingList2, setPendingList2] = useState([]);
-    const handlePress = () => setExpanded(!expanded);
+    const [reRender, setRerender] = useState(0);
     const authContext = useAuth();
     const { t } = useTranslation();
-    const isFocused = useIsFocused();
     const navigation = useNavigation();
     
     useEffect(() => {
         getData();
-    },[]);
+    },[reRender]);
 
     const getData = async () =>{
         let pendingList = [];
@@ -60,6 +58,10 @@ const ListPendingList = () => {
     const handleModal = (value) => {
         setModalOpen(true);
         setModalData(value);
+    }
+
+    const handleRefresh = () => {
+        setRerender(prev => prev+1);
     }
 
     const handleConfirm = () => {
@@ -186,7 +188,10 @@ const ListPendingList = () => {
                 </View>
                 </ScrollView>
             </Modal>
-            <Title>{t('PendingList.heading')}</Title>
+            <View style={styles.heading}>
+                <MaterialCommunityIcons style={styles.modalToggle} name='refresh' size={24} onPress={()=>handleRefresh()}/>
+                <Title>{t('PendingList.heading')}</Title>
+            </View>
             {pendingList2.length!=0 ? pendingList2.map((value,index) => (
                 <View key={value.title}>
                 <Card>
@@ -214,6 +219,9 @@ const styles = StyleSheet.create({
         flex: 1,
         margin: 10,
         backgroundColor: 'white'
+    },
+    heading: {
+        flexDirection: 'row',
     },
     modalContent: {
         flex: 1,

@@ -1,5 +1,6 @@
 {
     "Login": {
+        "name": "香港疑似COVID-19病例管理系統",
         "email": "電郵地址",
         "password": "密碼",
         "login": "登入",
@@ -20,7 +21,7 @@
         "invalid-email": "您的電子郵件無效! 請再試一次"
     },
     "Home": {
-        "cardTitle":"香港冠狀病毒病專題網站e",
+        "cardTitle":"香港冠狀病毒病專題網站",
         "cardText":"包括香港所有與 COVID-19 相關的資源",
         "buttonText":"提交個案"
     },
@@ -37,19 +38,20 @@
         "fail": "失敗"
     },
     "Alert": {
-        "loginSuccess": "Login successfully!",
-        "signUpSuccess": "Sign up successfully!",
-        "signOut": "Successfully signed out!",
-        "changePwd": "Password update successfully!",
-        "submit": "Submit",
-        "submitSuccess": "Submit successful!",
-        "submitFail": "Submit failed!",
-        "success": "Success",
-        "fail": "Fail",
-        "confirmSuccess": "Successful! Updated state as confirm",
-        "confirmFail": "Failure! Try again",
-        "rejectSuccess": "Successful! Updated state as reject",
-        "rejectFail": "Failure! Try again"
+        "loginSuccess": "登錄成功!",
+        "signUpSuccess": "註冊成功!",
+        "signOut": "登出成功!",
+        "changePwd": "密碼更新成功!",
+        "submit": "提交",
+        "submitSuccess": "提交成功!",
+        "submitFail": "提交失敗!",
+        "success": "成功",
+        "fail": "失敗",
+        "confirmSuccess": "成功! 狀態更新為確認",
+        "confirmFail": "失敗! 請再試一次",
+        "rejectSuccess": "成功! 狀態更新為拒絕",
+        "rejectFail": "失敗! 請再試一次",
+        "answerQuestions": "所有問題必須回答!"
     },
     "SurveyHK": {
         "reminder": "*此問卷內容為香港專用，其他地區不適用。",
@@ -92,13 +94,38 @@
     },
     "History": {
         "heading": "歷史紀錄:",
-        "noRecord": "沒有紀錄!"
+        "noRecord": "沒有紀錄!",
+        "date": "提交時間",
+        "state": "狀態"
     },
     "PendingList": {
         "heading": "待審核清單:",
         "noRecord": "沒有待審核的紀錄!",
         "more": "更多",
         "confirm": "確認",
-        "reject": "拒絕"
+        "reject": "拒絕",
+        "state": "狀態",
+        "date": "提交時間"
+    },
+    "UserRole": {
+        "reminder": "*可接受身份: user, staff, admin",
+        "email": "電郵",
+        "role": "身份",
+        "currentRole": "身份",
+        "area":"區域",
+        "user": "用戶",
+        "sameRole": "相同身份. 無需更改!",
+        "notValidRole": "不可接受的身份",
+        "success": "身份更新成功!",
+        "noUser": "沒有用戶.",
+        "updateButton": "更新身份",
+        "modify": "更改"
+    },
+    "ExportScreen": {
+        "exportButton": "匯出資料",
+        "total": "確診病例總數",
+        "nt": "新界區",
+        "kowloon": "九龍區",
+        "hk": "香港區"
     }
 }

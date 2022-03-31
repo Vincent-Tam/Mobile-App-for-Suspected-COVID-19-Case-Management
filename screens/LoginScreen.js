@@ -25,7 +25,7 @@ const LoginScreen = ({ navigation }) => {
         <KeyboardAvoidingView behavior={Platform.OS === "ios" ? "padding" : "height"}>
             {/*Login Title + photo*/}
             <Image style={styles.icon} source={require('../assets/COVID-Icon.jpg')}/>
-            <Text style={styles.title}> Hong Kong Suspected COVID-19 Case Management System</Text>
+            <Text style={styles.title}> {t('Login.name')}</Text>
 
             {/*form*/}
             <TextInput left={<TextInput.Icon name="email" />} style={styles.inputText} label={t('Login.email')} value={email} onChangeText={text => setEmail(text)}/>

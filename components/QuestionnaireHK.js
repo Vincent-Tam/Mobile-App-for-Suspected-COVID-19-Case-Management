@@ -115,6 +115,7 @@ const QuestionnaireHK = () => {
             if(q2 == 'No')
                 setOverseaAddress('');
             let timestamp = Moment(new Date()).format('YYYY-MM-DD HH:mm:ss');
+            const uid = authContext.getUid();
             // write a record on the real-time database(under pending category)
             rtdb.ref(`/${authContext.area}/pending/${timestamp}`).set({
                 name: name,
@@ -137,7 +138,7 @@ const QuestionnaireHK = () => {
                 area: authContext.area,
                 title: timestamp,
                 state: 'pending',
-                submitter: authContext.uid,
+                submitter: uid
             });
             // write a record on the real-time database(under user id category)
             rtdb.ref(`/records/${auth.currentUser?.uid}/${timestamp}`).set({
@@ -161,7 +162,7 @@ const QuestionnaireHK = () => {
                 area: authContext.area,
                 title: timestamp,
                 state: 'pending',
-                submitter: authContext.uid,
+                submitter: uid
             }).then(function(){
                 alert(t('SurveyHK.submitSuccess'));
                 // return to home screen
@@ -170,10 +171,10 @@ const QuestionnaireHK = () => {
                     routes: [{ name: 'Home' }],
                 });
             }).catch(error =>{
-                Alert.alert('Fail', error.message);
+                Alert.alert(t('SurveyHK.submitFail'), error.message);
             });
         }else {
-            Alert.alert('Fail', 'All question must be answered!');
+            Alert.alert(t('SurveyHK.submitFail'), t('Alert.answerQuestions'));
         }
     }
 
@@ -279,7 +280,7 @@ const QuestionnaireHK = () => {
             <RadioButton.Item label={t('SurveyHK.q9_Option4')} value='No, have not been tested' />
         </RadioButton.Group>
         <Divider />
-        <Button style={styles.submit} uppercase={false} mode='contained'onPress={()=>onSubmit()}>Submit</Button>
+        <Button style={styles.submit} uppercase={false} mode='contained'onPress={()=>onSubmit()}>{t('Alert.submit')}</Button>
         </>
     );
 }
