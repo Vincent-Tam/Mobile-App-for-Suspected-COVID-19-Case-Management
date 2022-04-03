@@ -103,7 +103,7 @@ const ExportScreen = () => {
                     </Button>
                 </View>
                 <View style={styles.text}>
-                    <Title>{t('ExportScreen.total')}: {total}</Title>
+                    <Title>{t('ExportScreen.totalConfirm')}: {total}</Title>
                     <Title>{t('ExportScreen.nt')}: {ntCount}</Title>
                     <Title>{t('ExportScreen.kowloon')}: {kCount}</Title>
                     <Title>{t('ExportScreen.hk')}: {hkCount}</Title>

@@ -123,9 +123,12 @@
     },
     "ExportScreen": {
         "exportButton": "匯出資料",
-        "total": "確診病例總數",
+        "total": "確診個案總數",
         "nt": "新界區",
         "kowloon": "九龍區",
-        "hk": "香港區"
+        "hk": "香港區",
+        "area": "區域",
+        "confirmCases": "確診個案",
+        "rejectCases": "拒絕個案"
     }
 }

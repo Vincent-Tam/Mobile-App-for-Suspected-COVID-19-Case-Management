@@ -2,9 +2,10 @@ import React from 'react'
 import { StyleSheet } from 'react-native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
-import HistoryStack from './HistoryStack'
 import AccountStack from './AccountStack'
 import PendingStack from './PendingStack'
+import StaffResultStack from './StaffResultStack'
+import { StaffResultScreen } from '../screens'
 
 const Tab = createBottomTabNavigator();
 
@@ -19,7 +20,7 @@ const BottomTab = () => {
                 if (route.name === 'PendingStack') {
                     iconName = focused ? 'home' : 'home-outline';
                 } 
-                else if (route.name === 'HistoryStack') {
+                else if (route.name === 'StaffResultStack') {
                     iconName = focused ? 'clipboard-list' : 'clipboard-list-outline';
                 }
                 else if (route.name === 'AccountStack') {
@@ -45,7 +46,7 @@ const BottomTab = () => {
         
         >
             <Tab.Screen name="PendingStack" options={{title:'Pending Records'}} component={PendingStack} />
-            {/* <Tab.Screen name="HistoryStack" options={{title:'History'}} component={HistoryStack} /> */}
+            <Tab.Screen name="StaffResultStack" options={{title:'Result'}} component={StaffResultStack} />
             <Tab.Screen name="AccountStack" options={{title:'Account'}} component={AccountStack} />
         </Tab.Navigator>
     );

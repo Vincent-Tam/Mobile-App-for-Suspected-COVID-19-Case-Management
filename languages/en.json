@@ -21,9 +21,9 @@
         "invalid-email": "Your email is not valid! Please try again"
     },
     "Home": {
-        "cardTitle":"Hong Kong COVID-19 Thematic Website",
-        "cardText":"Including all COVID-19 related resources in Hong Kong",
-        "buttonText":"Add New Record"
+        "cardTitle": "Hong Kong COVID-19 Thematic Website",
+        "cardText": "Including all COVID-19 related resources in Hong Kong",
+        "buttonText": "Add New Record"
     },
     "Account": {
         "account": "Account",
@@ -115,7 +115,7 @@
         "email": "Email",
         "role": "Role",
         "currentRole": "Current role",
-        "area":"Area",
+        "area": "Area",
         "user": "User",
         "sameRole": "Same role. No need to change!",
         "notValidRole": "Warning','Not acceptable role!",
@@ -126,9 +126,13 @@
     },
     "ExportScreen": {
         "exportButton": "Export Data",
-        "total": "Total confirm cases",
+        "total": "Total cases",
+        "totalConfirm": "Total confirm cases",
         "nt": "New Territories",
         "kowloon": "Kowloon",
-        "hk": "Hong Kong"
+        "hk": "Hong Kong",
+        "area": "Area",
+        "confirmCases": "Confirmed cases",
+        "rejectCases": "Rejected cases"
     }
 }
