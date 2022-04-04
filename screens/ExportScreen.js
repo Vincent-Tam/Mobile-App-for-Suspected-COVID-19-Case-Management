@@ -47,8 +47,9 @@ const ExportScreen = () => {
             })
             if(ntList[0]!=null){
                 ntCount = ntList.length;
-                setNTCount(ntCount.length);
+                setNTCount(ntCount);
             }
+            console.log(ntCount);
         });
         //Get Kowloon data
         K_ref.on('value', (snapshot) => {
@@ -57,7 +58,7 @@ const ExportScreen = () => {
             })
             if(kowloonList[0]!=null){
                 kCount = kowloonList.length;
-                setKCount(kowloonList.length);
+                setKCount(kCount);
             }
         });
         //Get Hong Kong data
@@ -67,7 +68,7 @@ const ExportScreen = () => {
             })
             if(hkList[0]!=null){
                 hkCount = hkList.length;
-                setHKCount(hkList.length);
+                setHKCount(hkCount);
             }
         });
         //Get database JSON
