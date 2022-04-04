@@ -26,6 +26,9 @@
         "buttonText":"提交個案"
     },
     "Account": {
+        "account": "帳戶",
+        "role": "身份",
+        "area": "區域",
         "signOut": "登出",
         "changePwd": "更改密碼",
         "newPwd": "新密碼",
